@@ -1,0 +1,140 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 15px auto; /* Centered with margin */
+    width: 95%; /* Smaller, rounded design */
+    max-width: 1200px; /* Max width for larger screens */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px; /* Rounded corners */
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.navbar:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px); /* Subtle hover lift */
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.95);
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: rgba(150, 200, 249, 1);
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px; /* Rounded buttons */
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: rgba(150, 200, 249, 1);
+    transform: translateY(-2px);
+}
+
+/* Dropdown Styles */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    list-style: none;
+    min-width: 150px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown li {
+    margin: 5px 0;
+}
+
+.dropdown a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.dropdown a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .dropdown {
+        position: static;
+        box-shadow: none;
+    }
+}
